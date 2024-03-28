@@ -4,7 +4,9 @@ WORKDIR /code
 
 COPY . .
 
-#COPY ../docker/backend /entrypoint
+COPY ../docker/django /entrypoint
+
+RUN chmod +x /entrypoint/entrypoint.sh
 
 RUN pip install --no-cache-dir Django
 
