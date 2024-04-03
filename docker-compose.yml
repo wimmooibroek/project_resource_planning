@@ -17,9 +17,11 @@ services:
 
   frontend:
     build:
-      context: ./docker/frontend
+      context: ./frontend
+    entrypoint: /entrypoint/entrypoint.sh
     volumes:
       - ./frontend:/code
+      - ./docker/frontend/entrypoint.sh:/entrypoint/entrypoint.sh
     ports:
       - "8080:8080"
 

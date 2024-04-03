@@ -4,10 +4,6 @@ WORKDIR /code
 
 COPY . .
 
-COPY ../docker/django /entrypoint
-
-RUN chmod +x /entrypoint/entrypoint.sh
-
 RUN pip install --no-cache-dir Django
 
 ENV DOCKERIZE_VERSION v0.6.1
